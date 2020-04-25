@@ -1,0 +1,302 @@
+{% block stylesheet %}
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+
+        @import url(https://fonts.googleapis.com/css?family=Josefin+Sans:400,300,300italic,400italic,600,700,600italic,700italic);
+        @import url(https://fonts.googleapis.com/css?family=Open+Sans:100,300,400,700);
+        @import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
+
+        body{
+            font-family: "Open Sans", sans-serif;
+            line-height: 1;
+            padding: 20px;
+            height: 100%;
+            background: #eee;
+        }
+
+        .demo-title {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 50px;
+        }
+
+        .pricing-table {
+            display: table;
+            width: 100%;
+        }
+        .pricing-table .pricing-option {
+            width: 28%;
+            background: white;
+            float: left;
+            padding: 2%;
+            text-align: center;
+            -webkit-transition: all .3s ease-in-out;
+            transition: all .3s ease-in-out;
+        }
+        .pricing-table .pricing-option:nth-child(even) {
+            margin: 0 2%;
+        }
+        .pricing-table .pricing-option:hover {
+            cursor: pointer;
+            box-shadow: 0px 2px 30px rgba(0, 0, 0, 0.3);
+            -webkit-transform: scale(1.04);
+            transform: scale(1.04);
+        }
+        .pricing-table .pricing-option:hover i, .pricing-table .pricing-option:hover h1, .pricing-table .pricing-option:hover span, .pricing-table .pricing-option:hover b {
+            color: grey;
+        }
+        .pricing-table .pricing-option:hover .front {
+            opacity: 0;
+            visibility: hidden;
+        }
+        .pricing-table .pricing-option:hover .back {
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+        .pricing-table .pricing-option:hover .back a.button {
+            -webkit-transform: translateY(0px) !important;
+            transform: translateY(0px) !important;
+        }
+        .pricing-table .pricing-option hr {
+            border: none;
+            border-bottom: 1px solid #F0F0F0;
+        }
+        .pricing-table .pricing-option i {
+            font-size: 3rem;
+            color: #D8D8D8;
+            -webkit-transition: all .3s ease-in-out;
+            transition: all .3s ease-in-out;
+        }
+        .pricing-table .pricing-option h1 {
+            margin: 10px 0;
+            color: #212121;
+            -webkit-transition: all .3s ease-in-out;
+            transition: all .3s ease-in-out;
+        }
+        .pricing-table .pricing-option p {
+            color: #999;
+            padding: 0 10px;
+            line-height: 1.3;
+        }
+        .pricing-table .pricing-option .price {
+            position: relative;
+        }
+        .pricing-table .pricing-option .price .front span.price {
+            font-size: 2rem;
+            text-transform: uppercase;
+            margin-top: 20px;
+            display: block;
+            font-weight: 700;
+            position: relative;
+        }
+        .pricing-table .pricing-option .price .front span.price b {
+            position: absolute;
+            font-size: 1rem;
+            margin-left: 2px;
+            font-weight: 600;
+        }
+        .pricing-table .pricing-option .price .back {
+            opacity: 0;
+            visibility: hidden;
+            -webkit-transition: all .3s ease-in-out;
+            transition: all .3s ease-in-out;
+        }
+        .pricing-table .pricing-option .price .back a.button {
+            background: grey;
+            padding: 15px 20px;
+            display: inline-block;
+            text-decoration: none;
+            color: white;
+            position: absolute;
+            font-size: 13px;
+            top: -5px;
+            left: 0;
+            right: 0;
+            width: 150px;
+            margin: auto;
+            text-transform: uppercase;
+            -webkit-transform: translateY(20px);
+            transform: translateY(20px);
+            -webkit-transition: all .3s ease-in-out;
+            transition: all .3s ease-in-out;
+        }
+        .pricing-table .pricing-option .price .back a.button:hover {
+            background: grey;
+        }
+
+        @media screen and (max-width: 600px) {
+            .pricing-table .pricing-option {
+                padding: 5%;
+                width: 90%;
+            }
+            .pricing-table .pricing-option:nth-child(even) {
+                margin: 30px 0 !important;
+            }
+        }
+
+
+        strong {
+            font-weight: bold;
+        }
+
+        em {
+            font-style: italic;
+        }
+
+        table {
+            background: #f5f5f5;
+            border-collapse: separate;
+            box-shadow: inset 0 1px 0 #fff;
+            font-size: 12px;
+            line-height: 24px;
+            margin: 30px auto;
+            text-align: left;
+            width: 800px;
+        }
+
+        th {
+            background: url(https://jackrugile.com/images/misc/noise-diagonal.png), linear-gradient(#777, #444);
+            border-left: 1px solid #555;
+            border-right: 1px solid #777;
+            border-top: 1px solid #555;
+            border-bottom: 1px solid #333;
+            box-shadow: inset 0 1px 0 #999;
+            color: #fff;
+            font-weight: bold;
+            padding: 10px 15px;
+            position: relative;
+            text-shadow: 0 1px 0 #000;
+        }
+
+        th:after {
+            background: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,.08));
+            content: '';
+            display: block;
+            height: 25%;
+            left: 0;
+            margin: 1px 0 0 0;
+            position: absolute;
+            top: 25%;
+            width: 100%;
+        }
+
+        th:first-child {
+            border-left: 1px solid #777;
+            box-shadow: inset 1px 1px 0 #999;
+        }
+
+        th:last-child {
+            box-shadow: inset -1px 1px 0 #999;
+        }
+
+        td {
+            border-right: 1px solid #fff;
+            border-left: 1px solid #e8e8e8;
+            border-top: 1px solid #fff;
+            border-bottom: 1px solid #e8e8e8;
+            padding: 10px 15px;
+            position: relative;
+            transition: all 300ms;
+        }
+
+        td:first-child {
+            box-shadow: inset 1px 0 0 #fff;
+        }
+
+        td:last-child {
+            border-right: 1px solid #e8e8e8;
+            box-shadow: inset -1px 0 0 #fff;
+        }
+
+        tr {
+            background: url(https://jackrugile.com/images/misc/noise-diagonal.png);
+        }
+
+        tr:nth-child(odd) td {
+            background: #f1f1f1 url(https://jackrugile.com/images/misc/noise-diagonal.png);
+        }
+
+        tr:last-of-type td {
+            box-shadow: inset 0 -1px 0 #fff;
+        }
+
+        tr:last-of-type td:first-child {
+            box-shadow: inset 1px -1px 0 #fff;
+        }
+
+        tr:last-of-type td:last-child {
+            box-shadow: inset -1px -1px 0 #fff;
+        }
+
+        tbody:hover td {
+            color: transparent;
+            text-shadow: 0 0 3px #aaa;
+        }
+
+        tbody:hover tr:hover td {
+            color: #444;
+            text-shadow: 0 1px 0 #fff;
+        }
+        h1
+        {
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+{% endblock %}
+{% block body %}
+    <div class="w3-top">
+        <div class="w3-bar w3-black w3-card">
+            <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+            <a href="/home/" class="w3-bar-item w3-button w3-padding-large">STRONA GŁÓWNA</a>
+            <a href="/file/upload" class="w3-bar-item w3-button w3-padding-large w3-hide-small">KATEGORIE</a>
+            <div class="w3-dropdown-hover w3-hide-small">
+                <button class="w3-padding-large w3-button" title="More"> ZALOGOWANY JAKO: {{ app.user.username }}<i class="fa fa-caret-down"></i></button>
+                <div class="w3-dropdown-content w3-bar-block w3-card-4">
+                    <a href="#" class="w3-bar-item w3-button">PROFILE</a>
+                    <a href="{{ path('app_logout') }}" class="w3-bar-item w3-button">LOGOUT</a>
+
+                </div>
+            </div>
+            <a href="javascript:void(0)" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i class="fa fa-search"></i></a>
+        </div>
+    </div>
+    {% for message in app.flashes('Success') %}
+        <div class="flash-notice">
+            {{ message }}
+        </div>
+    {% endfor %}
+    <h1>Posty</h1>
+    <table class="tabel table-striped">
+        <thead>
+        <tr>
+            <td>ID</td>
+            <td>Tytuł</td>
+        </tr>
+        </thead>
+        <tbody>
+        {% for post in posts %}
+            {% if post in posts  %}
+        <tr>
+            <td>{{ post.id }}</td>
+            <td>
+                <a href="{{ path('postshow',{id: post.id}) }}">
+                    {{ post.title }}
+                </a>
+            </td>
+            <td>
+                <a href="{{ path('postdelete', {id: post.id}) }}">
+                    USUŃ
+                </a>
+            </td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+{% endblock %}
+

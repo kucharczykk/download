@@ -1,0 +1,228 @@
+{% block title %}{% endblock %}
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+{% block stylesheet %}s
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Open+Sans:100,300,400,700);
+        @import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
+        body, html {
+            height: 100%;
+        }
+        label{
+            font-family: "Open Sans";
+            color:whitesmoke;
+        }
+        body {
+            font-family: 'Open Sans';
+            font-weight: 100;
+            display: -webkit-box;
+            display: flex;
+            overflow: hidden;
+        }
+
+        input ::-webkit-input-placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        input ::-moz-placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        input :-ms-input-placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        input:focus {
+            outline: 0 transparent solid;
+        }
+        input:focus ::-webkit-input-placeholder {
+            color: rgba(0, 0, 0, 0.7);
+        }
+        input:focus ::-moz-placeholder {
+            color: rgba(0, 0, 0, 0.7);
+        }
+        input:focus :-ms-input-placeholder {
+            color: rgba(0, 0, 0, 0.7);
+        }
+
+        .login-form {
+            min-height: 10rem;
+            margin: auto;
+            max-width: 50%;
+            padding: .5rem;
+        }
+
+        .login-text {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 auto;
+            max-width: 50%;
+            padding: .5rem;
+            text-align: center;
+        }
+        .login-text .fa-stack-1x {
+            color: black;
+        }
+
+        .form-control, .form-control {
+            background: transparent;
+            border: 0 solid;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+            color: white;
+            display: block;
+            margin: 1rem;
+            padding: .5rem;
+            -webkit-transition: 250ms background ease-in;
+            transition: 250ms background ease-in;
+            width: calc(100% - 3rem);
+        }
+        .form-control:focus, .form-control:focus {
+            background: white;
+            color: black;
+            -webkit-transition: 250ms background ease-in;
+            transition: 250ms background ease-in;
+        }
+
+        .login-forgot-pass {
+            bottom: 0;
+            color: white;
+            cursor: pointer;
+            display: block;
+            font-size: 75%;
+            left: 0;
+            opacity: 0.6;
+            padding: .5rem;
+            position: absolute;
+            text-align: center;
+            width: 100%;
+        }
+        .login-forgot-pass:hover {
+            opacity: 1;
+        }
+
+        .login-submit {
+            border: 1px solid white;
+            background: transparent;
+            color: white;
+            display: block;
+            margin: 1rem auto;
+            min-width: 1px;
+            padding: .25rem;
+            -webkit-transition: 250ms background ease-in;
+            transition: 250ms background ease-in;
+        }
+        .login-submit:hover, .login-submit:focus {
+            background: white;
+            color: black;
+            -webkit-transition: 250ms background ease-in;
+            transition: 250ms background ease-in;
+        }
+
+        [class*=underlay] {
+            left: 0;
+            min-height: 100%;
+            min-width: 100%;
+            position: fixed;
+            top: 0;
+        }
+
+        .underlay-photo {
+            -webkit-animation: hue-rotate 6s infinite;
+            animation: hue-rotate 6s infinite;
+            background: url("https://wallpaperset.com/w/full/0/d/c/155192.jpg");
+            background-size: cover;
+            -webkit-filter: grayscale(30%);
+            z-index: -1;
+        }
+
+        .underlay-black {
+            background: rgba(0, 0, 0, 0.7);
+            z-index: -1;
+        }
+
+        @-webkit-keyframes hue-rotate {
+            from {
+                -webkit-filter: grayscale(30%) hue-rotate(0deg);
+            }
+            to {
+                -webkit-filter: grayscale(30%) hue-rotate(360deg);
+            }
+        }
+
+        @keyframes hue-rotate {
+            from {
+                -webkit-filter: grayscale(30%) hue-rotate(0deg);
+            }
+            to {
+                -webkit-filter: grayscale(30%) hue-rotate(360deg);
+            }
+        }
+        .w3-container{
+            color:whitesmoke;
+            font-size: 30px;
+            display: block;
+        }
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            border-bottom: 1px dotted black;
+        }
+
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 120px;
+            background-color: whitesmoke;
+            color: black;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px 0;
+            position: absolute;
+            z-index: 1;
+            top: -5px;
+            right: 110%;
+        }
+
+        .tooltip .tooltiptext::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 100%;
+            margin-top: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: transparent transparent transparent black;
+
+        }
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+        }
+        button
+        {
+            background-color: black;
+            color: whitesmoke;
+            border: solid;
+            border-color: whitesmoke;
+            border-width: 0.5px;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+    <form method="post" class="login-form" >
+        {{ form(form) }}
+
+
+    </form>
+    <div class="w3-container">
+    <p class="tooltip">
+        <span class="tooltiptext">Strona Domowa</span>
+        <a href="suw">
+            <i class="fa fa-arrow-left"></i>
+        </a>
+
+        </p>
+    </div>
+    <div class="underlay-photo"></div>
+    <div class="underlay-black"></div>
+
+{% endblock %}
